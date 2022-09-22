@@ -5,13 +5,14 @@ const express = require('express'),
     mongoose = require('mongoose'),
     passport = require('passport'),
     logger = require("./logger");
+
 require('dotenv').config();
 
 const User = require("./models/User");
 
 // Database
 const config = require('./config/database');
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 5000;
 
 // Express Session
 const expressSession = require('express-session')({
@@ -56,7 +57,17 @@ db.on('error', function (err) {
   logger.error(err.message)
 });
 
-// server.use('/edit_product', produceroutes);
+server.set('view engine', 'pug');
+server.set('views', './views');
+server.use(express.static('public'))
+
+// server.use ('/editproduct', produceroutes);
+server.use('/',loginRoutes)
+
+
+
+
+// 
 
 
 
