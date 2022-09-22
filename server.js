@@ -63,12 +63,9 @@ server.use(express.static('public'))
 
 // server.use ('/editproduct', produceroutes);
 server.use('/',loginRoutes)
-
-
-
-
 // 
-
+// 
+// 
 
 
 
