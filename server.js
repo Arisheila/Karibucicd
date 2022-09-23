@@ -63,7 +63,9 @@ server.use(express.static('public'))
 
 // server.use ('/editproduct', produceroutes);
 server.use('/',loginRoutes)
-
+// 
+// 
+// 
 // Non Existing Routes and Server Port
 //handling non existing routes
 server.get('*', (req, res) => {
